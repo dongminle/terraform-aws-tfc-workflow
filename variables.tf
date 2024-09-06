@@ -46,3 +46,13 @@ variable "environment" {
     error_message = "The environment value must be dev, qa, or prod."
   }
 }
+
+variable "hashicat_count" {
+  type        = number
+  description = "Define the number of VMs"
+  default     = 1
+  validation {
+    condition     = (var.hashicat_count >= 1)
+    error_message = "The hashicat VM count must be greater than 1"
+  }
+}
