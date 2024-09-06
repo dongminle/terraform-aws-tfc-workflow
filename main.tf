@@ -1,12 +1,12 @@
 terraform {
-  # cloud {
-  #   organization = "dongminle-cicd-org"
-  #   hostname     = "app.terraform.io" # default
+  cloud {
+    organization = "dongminle-cicd-org"
+    hostname     = "app.terraform.io" # default
 
-  #   workspaces {
-  #     name = "terraform-aws-tfc-workflow"
-  #   }
-  # }
+    workspaces {
+      name = "terraform-aws-tfc-workflow"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -156,7 +156,7 @@ resource "aws_instance" "hashicat" {
 # Set up some environment variables for our script.
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
-resource "null_resource" "configure-cat-app" {
+resource "null_resource" "configure_cat_app" {
   depends_on = [aws_eip_association.hashicat]
 
   // triggers = {
