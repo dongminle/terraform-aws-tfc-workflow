@@ -19,7 +19,7 @@ variable "subnet_prefix" {
 
 variable "instance_type" {
   description = "Specifies the AWS instance type."
-  default     = "t3.small"
+  default     = "m6i.large"
 }
 
 variable "height" {
