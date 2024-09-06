@@ -159,7 +159,7 @@ resource "aws_instance" "hashicat" {
 # Set up some environment variables for our script.
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
-resource "null_resource" "configure-cat-app" {
+resource "null_resource" "configure_cat_app" {
   count      = var.hashicat_count
   depends_on = [aws_eip_association.hashicat]
 
