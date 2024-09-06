@@ -1,12 +1,12 @@
 terraform {
-  cloud {
-    organization = "<MY-ORG>"
-    hostname     = "app.terraform.io" # default
+  # cloud {
+  #   organization = "dongminle-cicd-org"
+  #   hostname     = "app.terraform.io" # default
 
-    workspaces {
-      name = "terraform-aws-tfc-workflow"
-    }
-  }
+  #   workspaces {
+  #     name = "terraform-aws-tfc-workflow"
+  #   }
+  # }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -21,6 +21,7 @@ provider "aws" {
     tags = {
       name        = "${var.prefix}-vpc-${var.region}"
       environment = var.environment
+      project     = "terraform cloud workflow"
     }
   }
 }
